@@ -228,7 +228,6 @@ void addMessage(int socket_file_descriptor)
     std::cin.ignore();
     getline(std::cin, to);
     std::cout << "Text: ";
-    std::cin.ignore();
     getline(std::cin, text);
 
     if (to == "all")
