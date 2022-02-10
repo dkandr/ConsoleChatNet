@@ -117,6 +117,11 @@ void signIn(int connection)
     read_user(connection, currentUser);
 
     bool existsLogin = existsUserWithLogin(currentUser.getLogin());
+
+    //запрещаем регистрацию с именем\логином all
+    if (currentUser.getLogin() == "all" || currentUser.getName() == "all")
+        existsLogin = true;
+
     write_result(connection, !existsLogin);
  
     if (!existsLogin)
